@@ -1,9 +1,16 @@
 image: alpine:latest
 
+build:
+    stage: build
+    script:
+        - "if [ -n '${BUILD_ID}' ]; then curl -O --header 'PRIVATE-TOKEN: $ARTIFACT_TOKEN' 'https://gitlab.com/api/v3/projects/$PROJECT_ID/builds/$BUILD_ID/artifacts'; fi"
+    only:
+        - triggers
+
 pages:
     stage: deploy
     script:
-     - if [ -n "${BUILD_ID}" ]; then curl -O --header "PRIVATE-TOKEN: $ARTIFACT_TOKEN" "https://gitlab.com/api/v3/projects/$PROJECT_ID/builds/$BUILD_ID/artifacts"; else curl -O --header "PRIVATE-TOKEN: $ARTIFACT_TOKEN" "https://gitlab.com/api/v3/projects/${PROJECT_ID}/builds/artifacts/master/download?job=compile_pdf"; fi
+     - echo "Nothing"
     only:
         - triggers
     artifacts:
