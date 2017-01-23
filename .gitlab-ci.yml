@@ -3,7 +3,7 @@ build:
     stage: build
     script:
         - "apk --no-cache add curl zip"
-        - "if [ -n ${BUILD_ID} ]; then curl -o artifacts.zip --header \"PRIVATE-TOKEN: ${ARTIFACT_TOKEN}\" \"https://gitlab.com/api/v3/projects/${PROJECT_ID}/builds/${BUILD_ID}/artifacts\"; fi "
+        - "curl -o artifacts.zip --header \"PRIVATE-TOKEN: ${ARTIFACT_TOKEN}\" \"https://gitlab.com/api/v3/projects/${PROJECT_ID}/builds/artifacts/master/download?job=compile_pdf\" "
         - "unzip artifacts.zip"
         - "mv src/manual.pdf src/index.pdf"
         - "pdf2htmlEX --zoom 1.5 --embed cfijo --dest-dir public src/index.pdf"
