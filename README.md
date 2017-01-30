@@ -1,67 +1,37 @@
-![Build Status](https://gitlab.com/pages/plain-html/badges/master/build.svg)
-
+# Friending User Guide
+[![build status](/../badges/master/build.svg)](/../commits/master)[![Friending](https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending/)[![Manual](https://img.shields.io/badge/artifacts-manual.png-red.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending-user-guide/)
 ---
+**Friending** is an online dating, friendship, and social networking mobile application that features user-created questionnaires and multiple choice questions. Friending has two primary features: joining groups to find people similar to you or registering for events happening in
+your local area.  Friending is a mobile app prototype built with Proto.io mobile app prototyping tool.
 
-Example plain HTML site using GitLab Pages.
+## Purpose
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation http://doc.gitlab.com/ee/pages/README.html.
-
----
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [GitLab CI](#gitlab-ci)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+The **Friending** prototype was built as part of the design of a requirements specification project.  **Friending** was built for a user manual (UM), in order to ensure that the screenshots in the user manual were visually consistent and believable.
+The User Manual was designed with the goal of _deceiving_ the reader into believing that the application actually existed.  Proto.io was the perfect tool to accomplish this goal.
 
 ## GitLab CI
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
+This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 
 ```
-pages:
-  stage: deploy
-  script:
-  - echo 'Nothing to do...'
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+build:
+    image: jrbeverly/pdf2htmlex
+    stage: build
+    script:
+        - "apk --no-cache add curl zip"
+        - "curl -o artifacts.zip --header \"PRIVATE-TOKEN: ${ARTIFACT_TOKEN}\" \"${GITLAB_URL}/api/v3/projects/${PROJECT_ID}/builds/artifacts/master/download?job=compile_pdf\" "
+        - "unzip artifacts.zip"
+        - "mv src/manual.pdf src/index.pdf"
+        - "pdf2htmlEX --zoom 1.5 --embed cfijo --dest-dir public src/index.pdf"
+    only:
+        - triggers
+    artifacts:
+        paths:
+            - public
 ```
 
-The above example expects to put all your HTML files in the `public/` directory.
-To use the files in the root directory, see the `host-from-root` branch
-https://gitlab.com/pages/plain-html/blob/host-from-root/.gitlab-ci.yml.
+It will download the latest build of `friending-manual` and convert it to a HTML representation.
 
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-## Troubleshooting
-
-1. CSS is missing! That means that you have wrongly set up the CSS URL in your
-   HTML files. Have a look at the [index.html] for an example.
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[index.html]: https://gitlab.com/pages/plain-html/blob/master/public/index.html
-[userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
-[projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
+## Proto io
+Proto.io is a web service to create fully-interactive high-fidelity prototypes that look and work exactly like your app should. No coding required.  Using Proto.io you can quickly design and prototype design ideas.  
