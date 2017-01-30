@@ -1,5 +1,5 @@
 # Friending User Guide
-[![build status](/../badges/master/build.svg)](/../commits/master)[![Friending](https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending/)[![Manual](https://img.shields.io/badge/artifacts-manual.png-red.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending-user-guide/)
+[![build status](/../badges/master/build.svg)](/../commits/master)[![Friending](https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending/)[![Manual](https://img.shields.io/badge/artifacts-view-red.svg?maxAge=2592000)](https://jrbeverly-friending.gitlab.io/friending-user-guide/)
 ---
 **Friending** is an online dating, friendship, and social networking mobile application that features user-created questionnaires and multiple choice questions. Friending has two primary features: joining groups to find people similar to you or registering for events happening in
 your local area.  Friending is a mobile app prototype built with Proto.io mobile app prototyping tool.
