@@ -1,2 +1,4 @@
 pdf2htmlEX*
 *.db
+public/
+target/
