@@ -5,9 +5,11 @@ build:
         - sh build/build.sh
     only:
         - triggers
+        - master
     artifacts:
         paths:
             - public
+        expire_in: 2 hours
 
 pages:
     image: alpine:latest
@@ -19,3 +21,4 @@ pages:
     artifacts:
         paths:
             - public
+        expire_in: 2 hours
