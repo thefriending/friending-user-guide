@@ -1,5 +1,5 @@
 build:
-    image: jrbeverly/pdf2htmlex
+    image: jrbeverly/pdf2htmlex:privileged
     stage: build
     script:
         - sh build/build.sh
