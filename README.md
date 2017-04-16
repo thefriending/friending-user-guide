@@ -5,18 +5,20 @@
 [![Guide][guide-badge]][guide-link]
 
 ---
-Friending is an online dating, friendship, and social networking mobile application.
 
-## Abstract
+## Summary
 
-Friending is an online dating, friendship, and social networking mobile application that features user-created questionnaires and multiple choice questions. Friending has two primary features: joining groups to find people similar to you or registering for events happening in
-your local area.  Friending is a mobile app prototype built with Proto.io mobile app prototyping tool.
+The Friending user manual provided as a web resource generated from the User Manual.  The user guide provides info and tips to help you understand the mobile application as a web resource, instead of the standard PDF representation of the user manual.  The method used to convert the user manual can be viewed in the `build/` directory.
 
-The Friending prototype was built as part of the design of a requirements specification project.  Friending was built for a user manual (UM), in order to ensure that the screenshots in the user manual were visually consistent and believable.  The User Manual was designed with the goal of _deceiving_ the reader into believing that the application actually existed.  Proto.io was the perfect tool to accomplish this goal.
+## Friending
+
+Friending is an online dating, friendship, and social networking mobile application that features user-created questionnaires. Friending has two primary features: joining groups to find people similar to you or registering for events happening in your local area.  Friending is a prototype built with the Proto.io application prototyping tool.
+
+The Friending prototype was built as part of a requirements specification project.  The requirements specification project involved constructing a user manual based on a project vision document as well as a set of user requirements.  The User Manual was designed with the goal of deceiving the reader into believing that the application actually existed.  Proto.io was the perfect tool to accomplish this goal in order to ensure that the presentation of Friending in the user manual is visually consistent and believable.  Proto.io provides a fully-interactive high-fidelity prototype that look and work similar to the described application in the user manual.
 
 ## GitLab CI
 
-This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).  It will download the latest build of `friending-manual` and convert it to a HTML representation.
+This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).  It will download the latest build of `friending-manual` and convert it to a HTML representation.  The conversion is handled by the utility `pdf2htmlEX`, which converts the `manual.pdf` to a HTML representation.
 
 ## Proto io
 
