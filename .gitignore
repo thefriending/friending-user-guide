@@ -1,4 +1,6 @@
 pdf2htmlEX*
-*.db
 public/
 target/
+
+*.zip
+*.db
