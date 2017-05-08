@@ -1,9 +1,9 @@
 #!/bin/sh
-set -ex
+set -e
 
 docker run --rm \
-        -v $(pwd):/media \
-        -e ARTIFACT_TOKEN=${ARTIFACT_TOKEN} \
-        -e GITLAB_URL=${GITLAB_URL} \
-        -e PROJECT_ID=${PROJECT_ID} \
+        -v $(dirname $(pwd)):/media \
+        -e GITLAB_URL="${GITLAB_URL}" \
+        -e NAMESPACE="${NAMESPACE}" \
+        -e PROJECT="${PROJECT}" \
         jrbeverly/pdf2htmlex:privileged sh build/build.sh
