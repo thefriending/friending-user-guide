@@ -18,16 +18,21 @@ The Friending prototype was built as part of a requirements specification projec
 
 ## Build
 
-You can build the standalone HTML page using `pdf2htmlEX`.  To build with `pdf2htmlEX`, you can do the following:
+You can build the standalone HTML page using `pdf2htmlEX`.  To build with `pdf2htmlEX`, you can either install `pdf2htmlEX` in your environment, or make use of the docker image.  To start the docker image, run the following:
+
+```console
+sh start.sh
+```
+
+You can then use `pdf2htmlEX` as such:
 
 ```console
 pdf2htmlEX --zoom 1.5 --embed cfijo --dest-dir public/ index.pdf
 ```
 
-It is recommend to use the build scripts available in `build/`.   These scripts are used in the build pipeline, ensuring that all arguments and attributes are set for compilation of the HTML page.  The scripts handle the process of downloading the user manual from source, allowing it to be converted from PDF to HTML without losing text or format.  These scripts should be run from the `build/` directory.
+It is recommend to use the build scripts available in `build/`.   These scripts are used in the build pipeline, ensuring that all arguments and attributes are set for compilation of the HTML page.  The scripts handle the process of downloading the user manual from source, allowing it to be converted from PDF to HTML without losing text or format.
 
 ```console
-cd build/
 sh compile.sh
 ```
 

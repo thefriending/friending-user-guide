@@ -7,8 +7,7 @@ build:
     image: jrbeverly/pdf2htmlex:privileged
     stage: build
     script:
-        - cd build/
-        - sh build.sh
+        - sh build/build.sh
     only:
         - triggers
         - master

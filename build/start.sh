@@ -8,9 +8,9 @@ SCRIPT=$(readlink -f "$0")
 DIR="$(dirname $SCRIPT)"
 
 # Environment
-docker run --rm \
+docker run --rm -it \
         -v $(dirname $DIR):/media \
         -e GITLAB_URL="${GITLAB_URL}" \
         -e NAMESPACE="${NAMESPACE}" \
         -e PROJECT="${PROJECT}" \
-        jrbeverly/pdf2htmlex:privileged cd build/ && sh build.sh
+        jrbeverly/pdf2htmlex:privileged sh

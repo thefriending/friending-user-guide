@@ -13,7 +13,9 @@ apk --no-cache add curl zip
 # Variables
 #
 # Build variables for directories.
-ROOT_DIR="$(pwd)"
+SCRIPT=$(readlink -f "$0")
+DIR="$(dirname $SCRIPT)"
+ROOT_DIR="$(dirname $DIR)"
 BIN_DIR="${ROOT_DIR}/target"
 DEST_DIR="${ROOT_DIR}/public"
 
@@ -29,4 +31,4 @@ unzip artifacts.zip
 mv manual.pdf index.pdf
 pdf2htmlEX --zoom 1.5 --embed cfijo --dest-dir ${DEST_DIR} index.pdf
 #
-cd $ROOT_DIR && rm -rf $BIN_DIR
+cd $DIR && rm -rf $BIN_DIR
