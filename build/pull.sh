@@ -1,11 +1,24 @@
 #!/bin/sh
 set -ex
 
-# Variable validation
 #
-# Verify that build variables are present.
-if [ -z ${GITLAB_URL} ]; then echo "GITLAB_URL is unset"; exit 1; fi
-if [ -z ${NAMESPACE} ]; then echo "NAMESPACE is unset"; exit 2; fi
-if [ -z ${PROJECT} ]; then echo "PROJECT is unset"; exit 3; fi
+# Checks
+#
+if [ -z $ARTIFACT_URL ]; then echo "ARTIFACT_URL is unset"; exit 1; fi
 
-curl -L -o artifacts.zip "${GITLAB_URL}/${NAMESPACE}/${PROJECT}/builds/artifacts/master/download?job=compile_pdf"
+#
+# Variables
+#
+SCRIPT=$(readlink -f "$0")
+DIR="$(dirname $SCRIPT)"
+ROOT_DIR="$(dirname $DIR)"
+BIN_DIR="${ROOT_DIR}/target"
+
+#
+# Pull
+#
+apk --update add zip 
+
+rm -rf $BIN_DIR && mkdir -p $BIN_DIR
+curl -L -o $BIN_DIR/artifacts.zip "$ARTIFACT_URL"
+unzip $BIN_DIR/artifacts.zip -d $BIN_DIR

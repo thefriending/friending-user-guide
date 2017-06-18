@@ -1,16 +1,20 @@
 #!/bin/sh
 set -e
 
+#
 # Variables
 #
-# Build variables for directories.
 SCRIPT=$(readlink -f "$0")
 DIR="$(dirname $SCRIPT)"
 
 # Environment
 docker run --rm \
         -v $(dirname $DIR):/media \
-        -e GITLAB_URL="${GITLAB_URL}" \
-        -e NAMESPACE="${NAMESPACE}" \
-        -e PROJECT="${PROJECT}" \
-        jrbeverly/pdf2htmlex:privileged cd build/ && sh build.sh
+        -e ARTIFACT_URL="${ARTIFACT_URL}" \
+        --workdir /media \
+        appropriate/curl sh build/pull.sh
+
+docker run --rm \
+        -v $(dirname $DIR):/media \
+        -e ARTIFACT_URL="${ARTIFACT_URL}" \
+        jrbeverly/pdf2htmlex:baseimage sh build/build.sh
