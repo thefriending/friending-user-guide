@@ -19,7 +19,7 @@ prepare:
     stage: prepare
     script:
         - sh build/pull.sh
-        - chmod -R target/ 
+        - chmod -R 777 target/ 
     only:
         - triggers
         - master
