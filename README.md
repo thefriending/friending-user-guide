@@ -40,9 +40,7 @@ sh compile.sh
 
 | Variable | Default | Description |
 | --- | --- |  --- | --- |
-| GITLAB_URL | see [`.gitlab-ci.yml`](.gitlab-ci.yml) | The domain of the gitlab instance hosting the friending user manual project. |
-| NAMESPACE | see [`.gitlab-ci.yml`](.gitlab-ci.yml) | The namespace of the friending user manual project. |
-| PROJECT | see [`.gitlab-ci.yml`](.gitlab-ci.yml) | The project name of the friending user manual project. |
+| ARTIFACT_URL | see [`.gitlab-ci.yml`](.gitlab-ci.yml) | The URL hosting the friending user manual. |
 
 ### GitLab CI
 
