@@ -48,14 +48,14 @@ sh compile.sh
 
 This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).  It will download the latest build of `friending-manual` and convert it to a HTML representation.  The conversion is handled by the utility `pdf2htmlEX`, which converts the `manual.pdf` to a HTML representation.  The output is available in the `public/` directory.
 
-[build-badge]: https://gitlab.com/jrbeverly-friending/friending-user-guide/badges/master/build.svg
-[build-link]: https://gitlab.com/jrbeverly-friending/friending-user-guide/commits/master
+[build-badge]: https://gitlab.com/jrbeverly/friending-user-guide/badges/master/build.svg
+[build-link]: https://gitlab.com/jrbeverly/friending-user-guide/commits/master
 
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000
 [license-link]: LICENSE
 
 [friending-badge]: https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000
-[friending-link]: https://jrbeverly-friending.gitlab.io/friending
+[friending-link]: https://jrbeverly.gitlab.io/friending
 
 [guide-badge]: https://img.shields.io/badge/artifacts-view-red.svg?maxAge=2592000
-[guide-link]: https://jrbeverly-friending.gitlab.io/friending-user-guide/
+[guide-link]: https://jrbeverly.gitlab.io/friending-user-guide/

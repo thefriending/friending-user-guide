@@ -24,7 +24,7 @@ prepare:
         - master
     artifacts:
         paths:
-            - public
+            - target
         expire_in: 2 hours
 
 # ----------------------------------------
