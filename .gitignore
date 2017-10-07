@@ -5,3 +5,6 @@ target/
 *.zip
 *.db
 doc/images/
+
+# Documentation:
+docs/**/images/
