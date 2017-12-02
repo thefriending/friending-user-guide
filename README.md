@@ -1,10 +1,4 @@
 # Friending User Guide
-[![Build][build-badge]][build-link]
-[![License][license-badge]][license-link]
-[![Friending][friending-badge]][friending-link]
-[![Guide][guide-badge]][guide-link]
-
----
 
 ## Summary
 
@@ -42,18 +36,8 @@ sh compile.sh
 | --- | --- |  --- | --- |
 | ARTIFACT_URL | see [`.gitlab-ci.yml`](.gitlab-ci.yml) | The URL hosting the friending user manual. |
 
-### GitLab CI
+## Acknowledgements
 
-This project's manual is built by [GitLab CI](https://about.gitlab.com/gitlab-ci/), following the steps defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).  It will download the latest build of `friending-manual` and convert it to a HTML representation.  The conversion is handled by the utility `pdf2htmlEX`, which converts the `manual.pdf` to a HTML representation.  The output is available in the `public/` directory.
+The project icon is retrieved from [the Noun Project](docs/icon/icon.json). The original source material has been altered for the purposes of the project. The icon is used under the terms of the [Public Domain](https://creativecommons.org/publicdomain/zero/1.0/).
 
-[build-badge]: https://gitlab.com/jrbeverly/friending-user-guide/badges/master/build.svg
-[build-link]: https://gitlab.com/jrbeverly/friending-user-guide/commits/master
-
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?maxAge=2592000
-[license-link]: LICENSE
-
-[friending-badge]: https://img.shields.io/badge/friending-view-blue.svg?maxAge=2592000
-[friending-link]: https://jrbeverly.gitlab.io/friending
-
-[guide-badge]: https://img.shields.io/badge/artifacts-view-red.svg?maxAge=2592000
-[guide-link]: https://jrbeverly.gitlab.io/friending-user-guide/
+The project icon is by [Five by Five from the Noun Project](https://thenounproject.com/term/startup/38246/).
