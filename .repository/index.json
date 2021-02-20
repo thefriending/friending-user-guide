@@ -1,0 +1,19 @@
+{
+  "slug": "user-guide",
+  "namespace": "thefriending",
+  "status": "archived",
+  "icon": "icon.svg",
+  "license": {
+    "type": "MIT",
+    "content": "Jonathan Beverly <jrbeverly>"
+  },
+  "topics": [
+    "latex",
+    "pdf2htmlex",
+    "conversion",
+    "html"
+  ],
+  "languages": [
+    "Shell"
+  ]
+}
