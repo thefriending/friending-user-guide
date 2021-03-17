@@ -1,0 +1,17 @@
+slug: user-guide
+description: The Friending user manual provided as a web resource generated from the user manual.
+project: thefriending
+namespace: spec
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2017
+topics: |-
+  [
+    "latex",
+    "pdf2htmlex",
+    "conversion",
+    "html"
+  ]
